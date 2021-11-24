@@ -1,0 +1,23 @@
+import math
+
+T = int(input())
+
+for i in range(T):
+
+    N=int(input())
+    ar=list(map(int,input().split()))
+    
+    odd=0
+    even=0
+
+    for j in ar:
+        if j%2==0:
+            odd+=1
+        else:
+            even+=1
+    odds=math.ceil(N/2)
+    evens=math.floor(N/2)
+
+    max =min(odd,evens)+min(even,odds)
+    print(max)
+
