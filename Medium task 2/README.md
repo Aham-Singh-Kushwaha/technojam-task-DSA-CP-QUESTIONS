@@ -12,3 +12,17 @@ The second one being that the compiler passed all the test cases , but when i tr
     For i from 2 to sqrt(n) do
         if n % i == 0 then return false
     return true
+    
+    **This code is correct in all ways, but this still gives random errors on leetcode, like time-limit exceeded and wrong answer error. So we have to improvise and use a better bottom-up approach on this problem.**
+    
+    
+    count = 0
+    notPrime = a boolean array with n slots, initially all false
+    For i from 2 to n do
+        if !notPrime[i] then
+            count = count + 1
+            For j from 2 to k where k * i < n do
+                notPrime[i * j] = true
+    return count
+ 
+ We have an array to check for prime which is initially false and turns true if any number matches the prime conditions,i.e. the factor count method.
